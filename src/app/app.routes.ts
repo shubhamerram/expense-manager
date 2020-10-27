@@ -40,14 +40,6 @@ const routes: Routes = [
     {path: 'category', component: CategoryComponent},
     {path: 'add-category', component: AddCategoryComponent},
     {path: 'edit-category/:id', component: EditCategoryComponent},
-    {path: 'profile', component: ProfileComponent},
-    {path: 'table', component: TableComponent},
-    {path: 'notification', component: NotificationComponent},
-    {path: 'alert', component: SweetAlertComponent},
-    {path: 'settings', component: SettingsComponent},
-    {path: 'components/price-table', component: PriceTableComponent},
-    {path: 'components/panels', component: PanelsComponent},
-    {path: 'components/wizard', component: WizardComponent}
   ]}
 ];
 

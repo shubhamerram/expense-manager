@@ -10,7 +10,7 @@
             </a>
           <div class="card-content">
             <div class="card-title-bar">
-                <h4 class="card-title">{{ date_title | date:medium}} <a mat-mini-fab color="accent" [routerLink]= '["/dashboard/add-spends/", date ]' ><i class="material-icons">add_box</i></a></h4>
+                <h4 class="card-title">{{ date_title | date:'medium'}} <a mat-mini-fab color="accent" [routerLink]= '["/dashboard/add-spends/", date ]' ><i class="material-icons">add_box</i></a></h4>
             </div>
             <div class="table-responsive">
               <table class="table" style="min-width: 100% !important; ">
