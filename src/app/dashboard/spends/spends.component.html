@@ -1,0 +1,24 @@
+<div class="container">
+    <app-navbar title="Panels" (shareDate)="shareDate($event)"></app-navbar>
+    <div class="row page-title">
+      <div class="col-xs-6 col-sm-6 col-md-6" *ngFor="let spend of spends">
+        <div class="card" (click)="spendDetails(spend.createdAt)">
+          <h4>{{spend.createdAt | date:"medium"}} <small></small></h4>
+          <div class="col-xs-12 col-sm-12 col-md-12 sub-card">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="card-sub-heading">Amount</div>
+                <div class="card-count">{{spend.total | currency:'INR' : symbol:'1.0'}}</div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="card-sub-heading">Items</div>
+                <div class="card-count">{{spend.count}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a [routerLink]="['/dashboard/add-spends', date]" class="float">
+      <i class="fa fa-plus my-float"></i>
+      </a>
+  </div>
+  

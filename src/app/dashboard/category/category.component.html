@@ -1,0 +1,38 @@
+<div class="container">
+    <app-navbar title="Table List"></app-navbar>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+            <a routerLink="/dashboard/spends">
+                <div class="card-header">
+                    <i class="material-icons">arrow_back_ios</i>
+                </div>
+            </a>
+          <div class="card-content">
+            <div class="card-title-bar">
+                <h4 class="card-title">{{ date_title | date:medium}} <a mat-mini-fab color="accent" [routerLink]= '["/dashboard/add-category"]' ><i class="material-icons">add_box</i></a></h4>
+            </div>
+            <div class="table-responsive">
+              <table class="table" style="min-width: 100% !important; ">
+                <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Category</th>
+                  <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let category of categorys; let i = index" ngxLongPress2 (onLongPress)="menu(category)">
+                  <td>{{i + 1}}</td>
+                  <td>{{category.name}}</td>
+                  <td>{{ category.createdAt | date:"medium"}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

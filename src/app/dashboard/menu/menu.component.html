@@ -1,0 +1,12 @@
+<mat-nav-list>
+    <a  (click)="openLink()" [routerLink]="['/dashboard/edit-spends/',data._id]" mat-list-item >
+      <span mat-line>Edit</span>
+      <span mat-line>Edit Spend</span>
+    </a>
+    <a mat-list-item (click)="delete()">
+        <span mat-line>Delete</span>
+        <span mat-line>Delete Spend</span>
+      </a>
+    
+  
+  </mat-nav-list>

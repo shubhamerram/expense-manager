@@ -1,0 +1,49 @@
+<div class="container">
+    <app-navbar title="Table List"></app-navbar>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+            <a routerLink="/dashboard/spends">
+                <div class="card-header">
+                    <i class="material-icons">arrow_back_ios</i>
+                </div>
+            </a>
+          <div class="card-content">
+            <div class="card-title-bar">
+                <h4 class="card-title">{{ date_title | date:medium}} <a mat-mini-fab color="accent" [routerLink]= '["/dashboard/add-spends/", date ]' ><i class="material-icons">add_box</i></a></h4>
+            </div>
+            <div class="table-responsive">
+              <table class="table" style="min-width: 100% !important; ">
+                <thead>
+                <tr>
+                  <th>#</th>
+                  <th></th>
+                  <th>Category</th>
+                  <th>Date</th>
+                  <th>Expense</th>
+                  <th class="text-right">Amount</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let spend of spends; let i = index" ngxLongPress2 (onLongPress)="menu(spend)">
+                  <td>{{i + 1}}</td>
+                  <td><mat-checkbox></mat-checkbox></td>
+                  <td></td>
+                  <td>{{ spend.date | date:"medium"}}</td>
+                  <td>{{spend.title}}</td>
+                  <td class="text-right">{{spend.amount | currency:"INR"}}</td>
+                </tr>
+                <tr>
+                  <td colspan="4"></td>
+                  <td style="font-weight: 500; font-size: 1.25em;" class="text-right">Total</td>
+                  <td style="font-size: 26px" class="text-right">{{ total | currency:"INR"}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
